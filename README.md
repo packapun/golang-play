@@ -6,3 +6,4 @@ TODO:
 - Implement interesting design patterns (Iterator)
 - add script for tempo
 - Implement basic search algorithms
+- Add code for Max water problem
