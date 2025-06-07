@@ -4,26 +4,28 @@ import (
 	"fmt"
 )
 
-func removeDuplicates(nums []int) int {
-	input := nums
-	i := 0
-	j := 0
-	// Loop starting from index [0, n - 2]
-	for j < len(nums) {
-		if j+1 < len(nums) && input[j] == input[j+1] {
-			j += 1
-			continue
-		}
-		input[i] = input[j]
-		i += 1
-		j += 1
+func maxProfit(prices []int) int {
+	if len(prices) <= 1 {
+		return 0
 	}
-	return i
-}
 
+	profit := 0
+
+	// Key insight: To maximize profit, we should capture every upward price movement
+	// This is equivalent to buying at every local minimum and selling at every local maximum
+	for i := 1; i < len(prices); i++ {
+		// If price increased from yesterday, we profit from that increase
+		// (buy yesterday, sell today)
+		if prices[i] > prices[i-1] {
+			profit += prices[i] - prices[i-1]
+		}
+	}
+
+	return profit
+}
 func main() {
 	fmt.Println("Hello world! This is the main driver program")
-	input := []int{1}
-	fmt.Println(removeDuplicates(input))
+	prices := []int{1, 1, 1, 1, 1, 1, 13}
+	fmt.Println(maxProfit(prices))
 
 }
