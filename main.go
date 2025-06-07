@@ -23,9 +23,41 @@ func maxProfit(prices []int) int {
 
 	return profit
 }
+
+func rotateRight(input []int) []int {
+	n := len(input)
+	if n < 2 {
+		return input
+	}
+	x := input[n-1]
+	for j := n - 1; j > 0; j-- {
+		input[j] = input[j-1]
+	}
+	input[0] = x
+	return input
+}
+
+func rotate(nums []int, k int) {
+	for _ = range k {
+		nums = rotateRight(nums)
+	}
+}
+
 func main() {
 	fmt.Println("Hello world! This is the main driver program")
-	prices := []int{1, 1, 1, 1, 1, 1, 13}
-	fmt.Println(maxProfit(prices))
+
+	testCases := [][]int{
+		{1, 2, 3, 4},
+		{1, 2, 3, 4, 5},
+		{6, 5, 4, 3, 2},
+		{1},
+		{0, 0, 0, 0, 1},
+	}
+
+	for i, testCase := range testCases {
+		fmt.Printf("Test case %d : %v \n", i+1, testCase)
+		rotate(testCase, 3)
+		fmt.Printf("Test case %d : %v \n", i+1, testCase)
+	}
 
 }
