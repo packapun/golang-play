@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 func maxProfit(prices []int) int {
@@ -43,21 +44,44 @@ func rotate(nums []int, k int) {
 	}
 }
 
+func containsDuplicate(nums []int) bool {
+	const k int = 2
+	sortedNums := nums
+	sort.Ints(sortedNums)
+	counter := 0
+	i := 0
+	for i < len(sortedNums)-1 {
+		if sortedNums[i] == sortedNums[i+1] {
+			counter += 1
+		} else {
+			counter = 0
+		}
+		if counter >= k {
+			return true
+		}
+		i += 1
+	}
+	return false
+}
+
 func main() {
 	fmt.Println("Hello world! This is the main driver program")
 
+	randomNumbers := []int{3, 1, 5, 2}
+	sort.Ints(randomNumbers)
+	fmt.Println(randomNumbers)
+
 	testCases := [][]int{
-		{1, 2, 3, 4},
-		{1, 2, 3, 4, 5},
-		{6, 5, 4, 3, 2},
+		{1, 2, 3, 4, 4},
+		{1, 2, 3, 4, 5, 5, 5},
+		{6, 5, 4, 3, 2, 1, 2, 3, 4, 1, 2},
 		{1},
 		{0, 0, 0, 0, 1},
 	}
 
 	for i, testCase := range testCases {
 		fmt.Printf("Test case %d : %v \n", i+1, testCase)
-		rotate(testCase, 3)
-		fmt.Printf("Test case %d : %v \n", i+1, testCase)
+		fmt.Println("Has dups =", containsDuplicate(testCase))
+		fmt.Println(testCase)
 	}
-
 }
