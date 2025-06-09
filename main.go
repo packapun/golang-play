@@ -40,6 +40,29 @@ func firstUniqChar(s string) int {
 	return -1
 }
 
+func isAnagram(s string, t string) bool {
+	if len(s) != len(t) {
+		return false
+	}
+
+	charCount := make(map[rune]int)
+
+	// Count characters in first string
+	for _, char := range s {
+		charCount[char]++
+	}
+
+	// Subtract characters from second string
+	for _, char := range t {
+		charCount[char]--
+		if charCount[char] == 0 {
+			delete(charCount, char)
+		}
+	}
+
+	return len(charCount) == 0
+}
+
 
 func main() {
 	fmt.Println("Hello world! This is the main driver program")
