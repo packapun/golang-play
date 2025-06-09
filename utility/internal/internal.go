@@ -118,3 +118,28 @@ func moveZeroes(nums []int) {
 		count--
 	}
 }
+
+// Rotate 2D array by 90 degrees
+func rotate(matrix [][]int) {
+	n := len(matrix)
+	for i := 0; i < n; i++ {
+		for j := i; j < n; j++ {
+			matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+		}
+	}
+
+	for i := range len(matrix) {
+		reverse(matrix[i])
+	}
+}
+
+func reverse(nums []int) {
+	start := 0
+	end := len(nums) - 1
+
+	for start < end {
+		nums[start], nums[end] = nums[end], nums[start]
+		start++
+		end--
+	}
+}
