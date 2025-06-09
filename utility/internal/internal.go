@@ -97,3 +97,24 @@ func plusOne(digits []int) []int {
 	}
 	return digits
 }
+
+func moveZeroes(nums []int) {
+	count := 0
+	i := 0
+	j := 0
+	n := len(nums)
+	for i < n && j < n {
+		if nums[i] == 0 {
+			count++
+		} else {
+			nums[j] = nums[i]
+			j += 1
+		}
+
+		i += 1
+	}
+	for count > 0 {
+		nums[n-count] = 0
+		count--
+	}
+}
