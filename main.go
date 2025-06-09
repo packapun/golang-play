@@ -25,6 +25,21 @@ func reverse(x int) int {
 	return reversedNum
 }
 
+func firstUniqChar(s string) int {
+	hashMap := make(map[byte]int)
+	stringSlice := []byte(s)
+	for _, letter := range stringSlice {
+		hashMap[letter]++
+	}
+
+	for i, letter := range stringSlice {
+		if count, ok := hashMap[letter]; ok && count == 1 {
+			return i
+		}
+	}
+	return -1
+}
+
 
 func main() {
 	fmt.Println("Hello world! This is the main driver program")
