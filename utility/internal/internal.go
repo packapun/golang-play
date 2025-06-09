@@ -143,3 +143,29 @@ func reverse(nums []int) {
 		end--
 	}
 }
+
+func removeNonAlphanumeric(s string) string {
+	reg := regexp.MustCompile(`[^a-zA-Z0-9]`)
+	return reg.ReplaceAllString(s, "")
+}
+
+func isPalindrome(s string) bool {
+	sanitizedString := removeNonAlphanumeric(s)
+	sanitizedString = strings.ToLower(sanitizedString)
+	reversedString := reverse(sanitizedString)
+	fmt.Println("Comparing : ", sanitizedString, reversedString)
+	return sanitizedString == reversedString
+
+}
+
+func reverse(s string) string {
+	input := []byte(s)
+	start := 0
+	end := len(s) - 1
+	for start < end {
+		input[start], input[end] = input[end], input[start]
+		start++
+		end--
+	}
+	return string(input)
+}
