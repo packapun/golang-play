@@ -77,3 +77,23 @@ func intersect(nums1 []int, nums2 []int) []int {
 	}
 	return result
 }
+
+func plusOne(digits []int) []int {
+	n := len(digits)
+	if n == 0 {
+		return digits
+	}
+	i := n - 1
+	for i >= 0 && digits[i] == 9 {
+		digits[i] = 0
+		i -= 1
+	}
+	if i >= 0 {
+		digits[i] += 1
+	} else {
+		// The digits of the given number are all 9s
+		digits[0] = 1
+		digits = append(digits, 0)
+	}
+	return digits
+}
