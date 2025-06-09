@@ -60,3 +60,20 @@ func containsDuplicate(nums []int) bool {
 	}
 	return false
 }
+
+func intersect(nums1 []int, nums2 []int) []int {
+	result := make([]int, 0)
+	countMap := make(map[int]int)
+
+	for _, num := range nums1 {
+		countMap[num]++
+	}
+
+	for _, num := range nums2 {
+		if count, exists := countMap[num]; exists && count > 0 {
+			result = append(result, num)
+			countMap[num]--
+		}
+	}
+	return result
+}

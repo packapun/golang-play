@@ -2,16 +2,9 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
-func main() {
-	fmt.Println("Hello world! This is the main driver program")
-
-	randomNumbers := []int{3, 1, 5, 2}
-	sort.Ints(randomNumbers)
-	fmt.Println(randomNumbers)
-
+func runTestCases() {
 	testCases := [][]int{
 		{1, 2, 3, 4, 4},
 		{1, 2, 3, 4, 5, 5, 5},
@@ -24,4 +17,8 @@ func main() {
 		fmt.Printf("Test case %d : %v \n", i+1, testCase)
 		fmt.Println(testCase)
 	}
+}
+
+func main() {
+	fmt.Println("Hello world! This is the main driver program")
 }
