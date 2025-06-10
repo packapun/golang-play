@@ -1,6 +1,11 @@
 package internal
 
-import "sort"
+import (
+	"fmt"
+	"regexp"
+	"sort"
+	"strings"
+)
 
 func maxProfit(prices []int) int {
 	if len(prices) <= 1 {
