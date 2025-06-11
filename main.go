@@ -82,6 +82,27 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	return dummy.Next
 }
 
+func hasCycle(head *ListNode) bool {
+    if head == nil {
+        return false 
+    }
+    p1 := head
+    p2 := head 
+    hasLoop := false
+    for p2 != nil && p1 != nil && p1.Next != nil {
+        p1 = p1.Next
+        p1 = p1.Next
+        p2 = p2.Next
+        
+        if p1 == p2 {
+            hasLoop = true
+            break 
+        }
+        
+    }
+    return hasLoop
+}
+
 func main() {
 	fmt.Println("Hello world! This is the main driver program")
 }
