@@ -103,6 +103,32 @@ func hasCycle(head *ListNode) bool {
     return hasLoop
 }
 
+ type TreeNode struct {
+      Val int
+      Left *TreeNode
+      Right *TreeNode
+  }
+
+func max(a int, b int) int {
+    if a > b {
+        return a
+    }
+    return b
+}
+
+
+func maxDepth(root *TreeNode) int {
+    return calculateDepth(root) 
+}
+
+func calculateDepth(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+    
+    return 1 + max(calculateDepth(root.Left), calculateDepth(root.Right))
+}
+
 func main() {
 	fmt.Println("Hello world! This is the main driver program")
 }
