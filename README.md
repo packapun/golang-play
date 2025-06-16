@@ -10,6 +10,7 @@ TODO:
 - Add basic paranthesis code
 - Add problems from Python Lab
 - Fix github author issue
+- Use Claude for any interview prep needed
 
 Great question! Here's how to use Claude strategically to maximize your interview preparation:
 
