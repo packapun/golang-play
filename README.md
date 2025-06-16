@@ -11,7 +11,7 @@ TODO:
 - Add problems from Python Lab
 - Fix github author issue
 - Use Claude for any interview prep needed
-
+- Read https://www.anthropic.com/engineering/built-multi-agent-research-system
 Great question! Here's how to use Claude strategically to maximize your interview preparation:
 
 ## 1. **Code Review & Optimization Partner**
