@@ -10,6 +10,7 @@ TODO:
 - Add basic paranthesis code
 - Add problems from Python Lab
 - Fix github author issue
+- Add additional questions to DSA
 - Use Claude for any interview prep needed
 - Read https://www.anthropic.com/engineering/built-multi-agent-research-system
 Great question! Here's how to use Claude strategically to maximize your interview preparation:
