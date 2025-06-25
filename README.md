@@ -12,6 +12,7 @@ TODO:
 - Fix github author issue
 - Add additional questions to DSA
 - Use Claude for any interview prep needed
+- Explore NumoFlow from Intuit
 - Read https://www.anthropic.com/engineering/built-multi-agent-research-system
 Great question! Here's how to use Claude strategically to maximize your interview preparation:
 
